@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class Catagory(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=20)
 
 
@@ -12,7 +12,7 @@ class Post(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-    catagories = models.ManyToManyField("catagory", related_name="posts")
+    catagories = models.ManyToManyField("category", related_name="posts")
 
 
 class Comment(models.Model):
